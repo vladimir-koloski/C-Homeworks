@@ -6,9 +6,20 @@ namespace Homework01.Exercise01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Vladimir");
-            Console.WriteLine("Vladimir");
+            Console.WriteLine("Traffic light...");
+            Console.BackgroundColor
+            = ConsoleColor.Red;
+            Console.WriteLine("Red Light - STOP!");
+            Console.BackgroundColor
+            = ConsoleColor.Yellow;
+            Console.WriteLine("Yellow Light - PREPARE.");
+            Console.BackgroundColor
+            = ConsoleColor.Green;
+            Console.WriteLine("Green Light - GO!");
 
+            Console.ReadLine();
+
+          
         }
     }
 }
