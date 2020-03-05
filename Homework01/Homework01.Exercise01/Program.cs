@@ -22,12 +22,15 @@ namespace Homework01.Exercise01
                 Console.WriteLine("Traffic light...");
                 Console.BackgroundColor
                 = ConsoleColor.Red;
+                Console.WriteLine();
                 Console.WriteLine("Red Light - STOP!");
                 Console.BackgroundColor
                 = ConsoleColor.Yellow;
+                Console.WriteLine();
                 Console.WriteLine("Yellow Light - PREPARE.");
                 Console.BackgroundColor
                 = ConsoleColor.Green;
+                Console.WriteLine();
                 Console.WriteLine("Green Light - GO!");
 
                 Console.ReadLine();
