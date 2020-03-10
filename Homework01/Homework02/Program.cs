@@ -93,17 +93,17 @@ namespace Homework02
             secondNum = int.Parse(Console.ReadLine());
             Console.WriteLine(checkLarger(firstNum, secondNum));
             int result = int.Parse(Console.ReadLine());
-            Console.WriteLine(checkEven(result));
+            checkEven(result);
 
             string checkEven(int result)
             {
                 if (result % 2 != 0)
                 {
-                    return Console.WriteLine("The number is odd");
+                    Console.WriteLine("The number is odd");
                 }
                 else
                 {
-                    return Console.WriteLine("The number is even");
+                    Console.WriteLine("The number is even");
                 }
             }
             
