@@ -29,30 +29,32 @@ namespace Homework03
                 new string[] { "Tose", "Trajan", "Dejan", "Stojan", "Ana" }
            };
 
+            Console.WriteLine("Do you want print first or second array: 0/1");
+            int selectArray = int.Parse(Console.ReadLine());
+            //if (selectArray == 1)
+            //{
+            //    Console.WriteLine(arraysOfNames[i]);
+            //}
+
+
             for (int i = 0; i < arraysOfNames.Length; i++)
             {
 
                 for (int j = 0; j < arraysOfNames[i].Length; j++)
                 {
-                    Console.WriteLine("Do you want print first or second array: 1/2");
-                    int selectArray = int.Parse(Console.ReadLine());
-                    if (selectArray == 1;)
+                    if (selectArray == 0)
                     {
-                    Console.WriteLine(arraysOfNames[i]);
+                        Console.WriteLine(arraysOfNames[selectArray][j]);
                     }
-                    if (selectArray == 2;)
-                    {
-                    Console.WriteLine(arraysOfNames[i][j]);
-                    }
-
                 }
 
             }
 
-                Console.ReadLine();
 
-                
-            }
+            Console.ReadLine();
+
+
+        }
     
 
         }
