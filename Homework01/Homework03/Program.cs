@@ -31,18 +31,18 @@ namespace Homework03
 
             Console.WriteLine("Do you want print first or second array: 0/1");
             int selectArray = int.Parse(Console.ReadLine());
-            //if (selectArray == 1)
-            //{
-            //    Console.WriteLine(arraysOfNames[i]);
-            //}
 
 
-            for (int i = 0; i < arraysOfNames.Length; i++)
+            for (int i = 0; i < arraysOfNames.Length - 1; i++)
             {
 
                 for (int j = 0; j < arraysOfNames[i].Length; j++)
                 {
                     if (selectArray == 0)
+                    {
+                        Console.WriteLine(arraysOfNames[selectArray][j]);
+                    }
+                    if (selectArray == 1)
                     {
                         Console.WriteLine(arraysOfNames[selectArray][j]);
                     }
