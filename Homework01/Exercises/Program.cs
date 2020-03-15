@@ -103,15 +103,22 @@ namespace Exercises
             //        Console.WriteLine(element);
             //    }
             #endregion
+            #region Task8
+
+            //Write a program that will read two arrays from console input.Then the program has to make a comparison 
+            //of the arrays and determine whether they are equal or not. { 1, 2, 3, 4 } == { 1, 2, 3, 4 }
+            //{ 1, 2, 3, 4 } != { 2, 1, 3, 4 }
+            #endregion
             #region 9
 
             //for (int i = 1; i < 1001; i++)
             //{
             //    int sum = 0;
-            //    while (i != 0)
+            //    int j = i;
+            //    while (j != 0)
             //    {
-            //        int d = i % 10;
-            //        i = i / 10;
+            //        int d = j % 10;
+            //        j = j / 10;
             //        sum += d;
             //    }
             //    if (i % sum == 0)
@@ -126,40 +133,170 @@ namespace Exercises
             //for (int i = 1; i < 1001; i++)
             //{
             //    int product = 1;
-            //    while (i != 0)
+            //    int j = i;
+            //    while (j != 0)
             //    {
-            //        int d = i % 10;
-            //        i = i / 10;
+            //        int d = j % 10;
+            //        j = j / 10;
             //        product *= d;
             //    }
-            //    if(i % product == 0)
+            //    //Console.WriteLine(product);
+            //    if (product == 0)
+            //    {
+            //        continue;
+            //    }
+            //    if (i % product == 0)
             //    {
             //        Console.WriteLine(i);
             //    }
             //}
             #endregion
-            #region Task11
+            #region Task12
 
 
-            //for(int i = 1; i <= 100; i++)
+            //for (int i = 1; i <= 100; i++)
             //{
-            //    if(i % 3 == 0)
+            //    if (i % 3 == 0)
             //    {
-            //        string d = i.ToString("Fizz");
-            //        Console.WriteLine(d);
+
+            //        Console.WriteLine("Fizz");
             //    }
             //    if (i % 5 == 0)
             //    {
-            //        string d = i.ToString("Buzz");
-            //        Console.WriteLine(d);
+
+            //        Console.WriteLine("Buzz");
             //    }
             //    if (i % 3 == 0 && i % 5 == 0)
             //    {
-            //        string d = i.ToString("FizzBuzz");
-            //        Console.WriteLine(d);
+
+            //        Console.WriteLine("FizzBuzz");
             //    }
-            //    Console.WriteLine(i);
+
             //}
+            #endregion
+            #region Bonus
+            Console.WriteLine("Enter Mode: easy/normal/hard");
+            string mode = Console.ReadLine();
+            Console.WriteLine("Press 1 to start a new game");
+            string newGame = Console.ReadLine();
+            Console.WriteLine("Press 2 to quit game");
+            string quitGame = Console.ReadLine();
+            if (quitGame == "2")
+            {
+
+            }
+            if (mode == "easy")
+            {
+                var random = new Random();
+                int randomnumber = random.Next(100);
+                //Console.WriteLine(randomnumber);
+                for (int i = 0; i < 9; i++)
+                {
+                    Console.WriteLine("Guess the number");
+                    int answer = int.Parse(Console.ReadLine());
+                    if (randomnumber == answer)
+                    {
+                        Console.WriteLine("Nailed it.number entered: " + answer);
+                        if (i == 0)
+                        {
+                            Console.WriteLine("Lucky guess");
+                        }
+                        break;
+                    }
+                    if (randomnumber > answer && randomnumber - answer > 10)
+                    {
+                        Console.WriteLine("Your guess is far to low, number entered:" + answer);
+                    }
+                    if (randomnumber > answer && randomnumber - answer < 10)
+                    {
+                        Console.WriteLine("Your guess is little bit lower, number entered:" + answer);
+                    }
+                    if (randomnumber < answer && answer - randomnumber > 10)
+                    {
+                        Console.WriteLine("Your guess is far to high, number entered:" + answer);
+                    }
+                    if (randomnumber < answer && answer - randomnumber < 10)
+                    {
+                        Console.WriteLine("Your guess is little bit higher, number entered:" + answer);
+                    }
+                }
+            }
+            if (mode == "normal")
+            {
+                var random = new Random();
+                int randomnumber = random.Next(500);
+                Console.WriteLine(randomnumber);
+                for (int i = 0; i < 7; i++)
+                {
+                    Console.WriteLine("Guess the number");
+                    int answer = int.Parse(Console.ReadLine());
+                    if (randomnumber == answer)
+                    {
+                        Console.WriteLine("Nailed it.number entered: " + answer);
+                        if (i == 0)
+                        {
+                            Console.WriteLine("Lucky guess");
+                        }
+                        break;
+                    }
+                    if (randomnumber > answer && randomnumber - answer > 20)
+                    {
+                        Console.WriteLine("Your guess is far to low, number entered:" + answer);
+                    }
+                    if (randomnumber > answer && randomnumber - answer < 20)
+                    {
+                        Console.WriteLine("Your guess is little bit lower, number entered:" + answer);
+                    }
+                    if (randomnumber < answer && answer - randomnumber > 20)
+                    {
+                        Console.WriteLine("Your guess is far to high, number entered:" + answer);
+                    }
+                    if (randomnumber < answer && answer - randomnumber < 20)
+                    {
+                        Console.WriteLine("Your guess is little bit higher, number entered:" + answer);
+                    }
+                }
+            }
+            if (mode == "hard")
+            {
+                var random = new Random();
+                int randomnumber = random.Next(1000);
+                Console.WriteLine(randomnumber);
+                Console.WriteLine("Guess the number");
+                for (int i = 0; i < 5; i++)
+                {
+                    int answer = int.Parse(Console.ReadLine());
+                    if (randomnumber == answer)
+                    {
+                        Console.WriteLine("Nailed it.number entered: " + answer);
+                        if (i == 0)
+                        {
+                            Console.WriteLine("Lucky guess");
+                        }
+                        break;
+                    }
+                    if (randomnumber > answer && randomnumber - answer > 20)
+                    {
+                        Console.WriteLine("Your guess is far to low, number entered:" + answer);
+                    }
+                    if (randomnumber > answer && randomnumber - answer < 20)
+                    {
+                        Console.WriteLine("Your guess is little bit lower, number entered:" + answer);
+                    }
+                    if (randomnumber < answer && answer - randomnumber > 20)
+                    {
+                        Console.WriteLine("Your guess is far to high, number entered:" + answer);
+                    }
+                    if (randomnumber < answer && answer - randomnumber < 20)
+                    {
+                        Console.WriteLine("Your guess is little bit higher, number entered:" + answer);
+                    }
+                    Console.WriteLine("Try again");
+                }
+            }
+
+
+            //Optional: Give the user a chance to restart the game(ex Press 1 to start a new game, press 2 to quit game) without starting the project from scratch.
             #endregion
 
             Console.ReadLine();
