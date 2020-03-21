@@ -11,7 +11,8 @@ namespace Exercises
             #region Task1
 
             //Console.WriteLine("Enter a number higher than 3");
-            //int number = int.Parse(Console.ReadLine());
+            //int number;
+            //int.TryParse(Console.ReadLine(), out number);
             //if (number > 3)
             //{
             //    for (int i = 1; i <= number; i++)
@@ -26,7 +27,8 @@ namespace Exercises
             #region Task2
 
             //Console.WriteLine("Enter a number higher than 5");
-            //int number1 = int.Parse(Console.ReadLine());
+            //int number1;
+            //int.TryParse(Console.ReadLine(), out number1);
             //if (number1 > 5)
             //{
             //    for (int i = 1; i <= number1; i++)
@@ -41,25 +43,27 @@ namespace Exercises
             #region Task3
 
             //Console.WriteLine("Enter a number");
-            //int number2 = int.Parse(Console.ReadLine());
-            //    int product = 1;
-            //    while (number2 != 0)
-            //    {
-            //        int d = number2 % 10;
-            //        number2 = number2 / 10;
-            //        product *= d;
+            //int number2;
+            //int.TryParse(Console.ReadLine(), out number2);
+            //int product = 1;
+            //while (number2 != 0)
+            //{
+            //    int d = number2 % 10;
+            //    number2 = number2 / 10;
+            //    product *= d;
 
-            //    }
-            //    Console.WriteLine(product);
+            //}
+            //Console.WriteLine(product);
             #endregion
             #region Task4
 
             //Console.WriteLine("Enter a number");
-            //int number3 = int.Parse(Console.ReadLine());
+            //int number3;
+            //int.TryParse(Console.ReadLine(), out number3);
             //int sum = 0;
-            //for(int i = 1; i <= number3; i++)
+            //for (int i = 1; i <= number3; i++)
             //{
-            //    if(i % 2 == 0)
+            //    if (i % 2 == 0)
             //    {
             //        sum += i;
             //    }
@@ -109,15 +113,15 @@ namespace Exercises
             //of the arrays and determine whether they are equal or not. { 1, 2, 3, 4 } == { 1, 2, 3, 4 }
             //{ 1, 2, 3, 4 } != { 2, 1, 3, 4 }
 
-            int[] arr1 = new int[] { 1, 2, 3, 4 };
-            int[] arr2 = new int[] { 1, 2, 4, 4 };
-            for (int i = 0; i < arr1.Length; i++)
-            {
-                if(arr1[i] == arr2[i])
-                {
-                    Console.WriteLine("The arr1 and arr2 are equal");
-                }
-            }
+            //int[] arr1 = new int[] { 1, 2, 3, 4 };
+            //int[] arr2 = new int[] { 1, 2, 4, 4 };
+            //for (int i = 0; i < arr1.Length; i++)
+            //{
+            //    if(arr1[i] == arr2[i])
+            //    {
+            //        Console.WriteLine("The arr1 and arr2 are equal");
+            //    }
+            //}
             #endregion
             #region 9
 
@@ -191,6 +195,8 @@ namespace Exercises
             //string newGame = Console.ReadLine();
             //Console.WriteLine("Press 2 to quit game");
             //string quitGame = Console.ReadLine();
+            //while(true)
+            //{ 
             //if (quitGame == "2")
             //{
 
@@ -303,6 +309,7 @@ namespace Exercises
             //        }
             //        Console.WriteLine("Try again");
             //    }
+            //}
             //}
 
 

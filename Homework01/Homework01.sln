@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework02", "Homework02\Ho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework03", "Homework03\Homework03.csproj", "{8F0EDDD0-3191-4C59-8FFF-72DC0D9EF7E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercises", "Exercises\Exercises.csproj", "{40B4F007-3C9C-4078-98D0-662458122CEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercises", "Exercises\Exercises.csproj", "{40B4F007-3C9C-4078-98D0-662458122CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraExerciseG1", "ExtraExerciseG1\ExtraExerciseG1.csproj", "{B89FF375-87A8-42A6-B6D1-4D10A8BF1233}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtraExerciseG1", "ExtraExerciseG1\ExtraExerciseG1.csproj", "{B89FF375-87A8-42A6-B6D1-4D10A8BF1233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Real calculator", "Real calculator\Real calculator.csproj", "{275336A0-1D11-4772-87FC-EA5F5C925716}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B89FF375-87A8-42A6-B6D1-4D10A8BF1233}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89FF375-87A8-42A6-B6D1-4D10A8BF1233}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89FF375-87A8-42A6-B6D1-4D10A8BF1233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275336A0-1D11-4772-87FC-EA5F5C925716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275336A0-1D11-4772-87FC-EA5F5C925716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275336A0-1D11-4772-87FC-EA5F5C925716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275336A0-1D11-4772-87FC-EA5F5C925716}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

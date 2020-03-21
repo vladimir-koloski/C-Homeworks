@@ -20,10 +20,12 @@ namespace ExtraExerciseG1
             //2.Write a program in C# Sharp to read 10 numbers from keyboard and find their sum and average.
             //int sum = 0;
             //int average = 0;
+            //int number;
             //Console.WriteLine("Enter ten numbers");
             //for (int i = 0; i < 10; i++)
             //{
-            //    int number = int.Parse(Console.ReadLine());
+            //    int.TryParse(Console.ReadLine(), out number);
+            //    //int number = int.Parse(Console.ReadLine());
             //    sum += number;
             //    average = sum / 10;
             //}
@@ -47,10 +49,12 @@ namespace ExtraExerciseG1
             //        max = arrayOfNumbers[i];
             //    }
             //}
+            //int maxIndex = Array.IndexOf(arrayOfNumbers, max);
+            //int minIndex = Array.IndexOf(arrayOfNumbers, min);
             //Console.WriteLine("The max number is: " + max);
-            //Console.WriteLine("Minimum element index :" + Array.IndexOf(arrayOfNumbers, max));
+            //Console.WriteLine("Minimum element index :" + maxIndex);
             //Console.WriteLine("The min number is: " + min);
-            //Console.WriteLine("Minimum element index :" + Array.IndexOf(arrayOfNumbers, min));
+            //Console.WriteLine("Minimum element index :" + minIndex);
 
 
             //4.arrayWithDuplicates = [1, 4, 6, 3, 4, 5, 9, 3, 2, 9]
@@ -153,37 +157,21 @@ namespace ExtraExerciseG1
 
             string[] userNames = new string[] { "user1", "user2", "user3" };
             string[] passwords = new string[] { "first", "second", "third" };
-            while (true)
+
+            Console.WriteLine("Enter username");
+            string userInput = (Console.ReadLine());
+            Console.WriteLine("Enter password");
+            string passwordInput = (Console.ReadLine());
+
+            for (int i = 0; i < userNames.Length; i++)
             {
-                Console.WriteLine("Enter username");
-                string userInput = (Console.ReadLine());
-                Console.WriteLine("Enter password");
-                string passwordInput = (Console.ReadLine());
+                if (userInput == userNames[i] && passwordInput == passwords[i])
+                {
+                    Console.WriteLine("You are logged in successfully");
+                    break;
 
-                if(userInput == userNames[0] && passwordInput == passwords[0])
-                {
-                    Console.WriteLine("You are logged in successfully");
-                    break;
-                }
-                else if (userInput == userNames[1] && passwordInput == passwords[1])
-                {
-                    Console.WriteLine("You are logged in successfully");
-                    break;
-                }
-                else if (userInput == userNames[2] && passwordInput == passwords[2])
-                {
-                    Console.WriteLine("You are logged in successfully");
-                    break;
-                }
-                else
-                {
-                    
-                    Console.WriteLine("Incorrect username or password!");
-                    
-                }
+                }     
             }
-
-
             Console.ReadLine();
         }
     }
