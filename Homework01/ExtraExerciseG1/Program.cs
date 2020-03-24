@@ -165,12 +165,17 @@ namespace ExtraExerciseG1
 
             for (int i = 0; i < userNames.Length; i++)
             {
-                if (userInput == userNames[i] && passwordInput == passwords[i])
+                if (userInput != userNames[i] || passwordInput != passwords[i])
+                {
+                    Console.WriteLine("Incorrect username or password");
+                
+                    
+                }
+                else
                 {
                     Console.WriteLine("You are logged in successfully");
                     break;
-
-                }     
+                }
             }
             Console.ReadLine();
         }

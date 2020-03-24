@@ -85,39 +85,39 @@ namespace Homework02
 
             #region Exercise06
 
-            int firstNum;
-            int secondNum;
-            Console.WriteLine("Enter the first number");
-            firstNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the second number");
-            secondNum = int.Parse(Console.ReadLine());
-            Console.WriteLine(checkLarger(firstNum, secondNum));
-            int result = int.Parse(Console.ReadLine());
-            checkEven(result);
+            //int firstNum;
+            //int secondNum;
+            //Console.WriteLine("Enter the first number");
+            //firstNum = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the second number");
+            //secondNum = int.Parse(Console.ReadLine());
+            //Console.WriteLine(checkLarger(firstNum, secondNum));
+            //int result = int.Parse(Console.ReadLine());
+            //checkEven(result);
 
-            string checkEven(int result)
-            {
-                if (result % 2 != 0)
-                {
-                    Console.WriteLine("The number is odd");
-                }
-                else
-                {
-                    Console.WriteLine("The number is even");
-                }
-            }
+            //string checkEven(int result)
+            //{
+            //    if (result % 2 != 0)
+            //    {
+            //        Console.WriteLine("The number is odd");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("The number is even");
+            //    }
+            //}
             
-            int checkLarger(int firstNum, int secondNum)
-            {
-                if (firstNum > secondNum)
-                {
-                     return firstNum;
-                }
-                else
-                {
-                    return secondNum;
-                } 
-            }
+            //int checkLarger(int firstNum, int secondNum)
+            //{
+            //    if (firstNum > secondNum)
+            //    {
+            //         return firstNum;
+            //    }
+            //    else
+            //    {
+            //        return secondNum;
+            //    } 
+            //}
             
 
 
