@@ -56,7 +56,7 @@ namespace Homework04
         static void Main(string[] args)
         {
 
-            Console.WriteLine(FindMaxNum(new int[] { -5, -6, -3, -2, -12}));
+            Console.WriteLine(FindMaxNum(new int[] { -5, -6, -3, -2, -12, 25, 13, 6, 15}));
             Console.ReadLine();
         }
 
@@ -75,7 +75,10 @@ namespace Homework04
                 }
                 else
                 {
-                    maxNum = realNumbers[i];
+                    if (realNumbers[i] > maxNum)
+                    {
+                        maxNum = realNumbers[i];
+                    }
                 }
             }
             return maxNum;
