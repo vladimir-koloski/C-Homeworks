@@ -6,23 +6,25 @@ namespace Homework04
     {
         //static void Main(string[] args)
         //{
-        //    string message1 = Substrings();
-        //    Console.WriteLine("Enter a number");
-        //    int n;
-        //    int.TryParse(Console.ReadLine(), out n);
-        //    if (n > message1.Length)
-        //    {
-        //        Console.WriteLine($"Please enter number lower than {message1.Length} ");
-        //    }
-        //    var nCharacter = message1.Substring(n);
-        //    Console.WriteLine(nCharacter, nCharacter.Length);
-        //    Console.ReadLine();
+        //    Console.WriteLine();
         //}
 
         //public static void Substrings()
         //{
         //    string message = "Hello from SEDC Codecademy v7.0";
+        //    Console.WriteLine("Enter a number");
+        //    int n;
+        //    int.TryParse(Console.ReadLine(), out n);
+        //    if (n > message.Length)
+        //    {
+        //        Console.WriteLine($"Please enter number lower than {message.Length} ");
+        //    }
+        //    var nCharacter = message.Substring(n);
+        //    Console.WriteLine(nCharacter, nCharacter.Length);
+
+        //    Console.ReadLine();
         //}
+
 
 
         #region Task1
@@ -53,24 +55,31 @@ namespace Homework04
         //Create a function which returns the greatest value stored in an array of real numbers which is specified as parameter.
         static void Main(string[] args)
         {
-            
-            Console.WriteLine(FindMaxNum (new int[] {2, 6, 7, 13, 23, 12 }));
+
+            Console.WriteLine(FindMaxNum(new int[] { -5, -6, -3, -2, -12}));
             Console.ReadLine();
         }
 
         public static int FindMaxNum(int[] realNumbers)
         {
-            int [] realNumbers = new int[]{ };
+            //int[] realNumbers = new int[] { };
             int maxNum = 0;
             for (int i = 0; i < realNumbers.Length; i++)
             {
-                if (realNumbers[i] > maxNum)
+                if (realNumbers[i] < 0)
                 {
-                    maxNum = i;
+                    if (maxNum == 0 || realNumbers[i] > maxNum)
+                    {
+                        maxNum = realNumbers[i];
+                    }
                 }
-                    
+                else
+                {
+                    maxNum = realNumbers[i];
+                }
             }
-            
+            return maxNum;
+
         }
 
         #endregion
