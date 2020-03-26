@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtraExerciseG1", "ExtraExe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Real calculator", "Real calculator\Real calculator.csproj", "{275336A0-1D11-4772-87FC-EA5F5C925716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework04", "Homework004\Homework04.csproj", "{7F28A812-E55D-42DE-8326-824354618EFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework04", "Homework004\Homework04.csproj", "{7F28A812-E55D-42DE-8326-824354618EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework05", "Homework05\Homework05.csproj", "{3E8BC7F0-97A7-4EC0-A854-C11781D89830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7F28A812-E55D-42DE-8326-824354618EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F28A812-E55D-42DE-8326-824354618EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F28A812-E55D-42DE-8326-824354618EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8BC7F0-97A7-4EC0-A854-C11781D89830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8BC7F0-97A7-4EC0-A854-C11781D89830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8BC7F0-97A7-4EC0-A854-C11781D89830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8BC7F0-97A7-4EC0-A854-C11781D89830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
