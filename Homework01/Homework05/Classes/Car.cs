@@ -15,15 +15,16 @@ namespace Homework05.Classes
             return Driver.Skill * Speed;
         }
 
-        public int RaceCars(string car1, string car2)
+        public void RaceCars(string car1, string car2)
         {
-            if (Car.Speed > car2.Speed)
+           
+            if (car1.Speed > car2.Speed)
             {
-                Console.WriteLine($"Will win {car1}");
+                Console.WriteLine($"Car no. 1 was faster.");
             }
             else
             {
-                Console.WriteLine($"Will win {car2}");
+                Console.WriteLine($"Car no. 2 was faster.");
             }
         }
     }

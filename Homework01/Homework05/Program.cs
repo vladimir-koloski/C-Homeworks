@@ -96,6 +96,8 @@ namespace Homework05
             Console.WriteLine($"Chose a driver no.2: {driver1.Name}, {driver2.Name}, {driver3.Name}, {driver4.Name}");
             string inputDrive2 = Console.ReadLine();
 
+            car.RaceCars(inputCar1, inputCar2);
+
             Console.ReadLine();
         }
     }
