@@ -4,27 +4,29 @@ using System.Text;
 
 namespace Homework05.Classes
 {
-    class Car
+    public class Car
     {
         public string Model { get; set; }
         public int Speed { get; set; }
-        public string Driver { get; set; }
+        public Driver Driver { get; set; }
 
-        public int CalculateSpeed(int Skill)
+        public int CalculateSpeed(Driver Driver)
         {
-            return Skill * Speed;
+            return Driver.Skill * Speed;
         }
 
-        public void RaceCars(Car a, Car b)
+        public static void RaceCars(Car a, Car b)
         {
 
             if (a.Speed > b.Speed)
             {
                 Console.WriteLine($"Car no. 1 was faster.");
+                Console.WriteLine($"{a.Model} won the Race, with speed {a.Speed} km/h, and the driver was {a.Driver}");
             }
             else
             {
                 Console.WriteLine($"Car no. 2 was faster.");
+                Console.WriteLine($"{b.Model} won the Race, with speed {b.Speed} km/h, and the driver was {b.Driver}");
             }
         }
     }
