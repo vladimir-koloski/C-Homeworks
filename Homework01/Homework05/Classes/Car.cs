@@ -10,15 +10,15 @@ namespace Homework05.Classes
         public int Speed { get; set; }
         public string Driver { get; set; }
 
-        public int CalculateSpeed(int Driver)
+        public int CalculateSpeed(int Skill)
         {
-            return Driver.Skill * Speed;
+            return Skill * Speed;
         }
 
-        public void RaceCars(string car1, string car2)
+        public void RaceCars(Car a, Car b)
         {
-           
-            if (car1.Speed > car2.Speed)
+
+            if (a.Speed > b.Speed)
             {
                 Console.WriteLine($"Car no. 1 was faster.");
             }

@@ -4,26 +4,23 @@ namespace Homework04
 {
     class Program
     {
-        //static void Main(string[] args)
-        //{
-        //    Console.WriteLine(Substrings());
-        //}
+        
 
-        //public static void Substrings()
-        //{
-        //    string message = "Hello from SEDC Codecademy v7.0";
-        //    Console.WriteLine("Enter a number");
-        //    int n;
-        //    int.TryParse(Console.ReadLine(), out n);
-        //    if (n > message.Length)
-        //    {
-        //        Console.WriteLine($"Please enter number lower than {message.Length} ");
-        //    }
-        //    string nCharacter = message.Substring(n);
-        //    Console.WriteLine(nCharacter, nCharacter.Length);
+        public static void Main()
+        {
+            string message = "Hello from SEDC Codecademy v7.0";
+            Console.WriteLine("Enter a number");
+            int n;
+            int.TryParse(Console.ReadLine(), out n);
+            if (n > message.Length)
+            {
+                Console.WriteLine($"Please enter number lower than {message.Length} ");
+            }
+            string nCharacter = message.Substring(n);
+            Console.WriteLine(nCharacter, nCharacter.Length);
 
-        //    Console.ReadLine();
-        //}
+            Console.ReadLine();
+        }
 
 
 

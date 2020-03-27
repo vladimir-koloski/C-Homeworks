@@ -89,14 +89,47 @@ namespace Homework05
 
             Console.WriteLine($"Chose a car no.1: {car1.Model}, {car2.Model}, {car3.Model}, {car4.Model}");
             string inputCar1 = Console.ReadLine();
+            if(inputCar1 == "Panda")
+            {
+                return car1;
+            };
+            if (inputCar1 == "Megan")
+            {
+                return car2;
+            };
+            if (inputCar1 == "Boxer")
+            {
+                return car3;
+            };
+            if (inputCar1 == "Polo")
+            {
+                return car4;
+            };
             Console.WriteLine($"Chose a driver no.1: {driver1.Name}, {driver2.Name}, {driver3.Name}, {driver4.Name}");
-            string inputDrive1 = Console.ReadLine();
+            string inputDriver1 = Console.ReadLine();
+            if (inputDriver1 == "Vlatko")
+            {
+                return driver1;
+            };
+            if (inputDriver1 == "Stefan")
+            {
+                return driver2;
+            };
+            if (inputDriver1 == "Darko")
+            {
+                return driver3;
+            };
+            if (inputDriver1 == "Zlatan")
+            {
+                return driver4;
+            };
             Console.WriteLine($"Chose a car no.2: {car1.Model}, {car2.Model}, {car3.Model}, {car4.Model}");
             string inputCar2 = Console.ReadLine();
             Console.WriteLine($"Chose a driver no.2: {driver1.Name}, {driver2.Name}, {driver3.Name}, {driver4.Name}");
             string inputDrive2 = Console.ReadLine();
 
-            car.RaceCars(inputCar1, inputCar2);
+            Car.RaceCars(inputCar1, inputCar2);
+            
 
             Console.ReadLine();
         }
