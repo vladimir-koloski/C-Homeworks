@@ -75,12 +75,12 @@ namespace Homework04
         #endregion
 
         #region Task03
-        static void Main(string[] args)
-        {
-            Console.WriteLine(VowelsCounter("Console Something 352")); 
-            Console.WriteLine(DigitsCounter("352"));
-            Console.ReadLine();
-        }
+        //static void Main(string[] args)
+        //{
+        //    Console.WriteLine(VowelsCounter("Console Something 352")); 
+        //    Console.WriteLine(DigitsCounter("352"));
+        //    Console.ReadLine();
+        //}
 
         public static int VowelsCounter(string word)
         {
@@ -88,11 +88,11 @@ namespace Homework04
             int counter = 0;
             foreach (char item in charArray)
             {
-                if (item != 'a' && item != 'e' && item != 'o' && item != 'i' && item != 'u' && !Char.IsDigit(item))
+                if (item != 'a' && item != 'e' && item != 'o' && item != 'i' && item != 'u' && !Char.IsDigit(item) && !Char.IsWhiteSpace(item))
                 {
                     counter++;
                 }
-         
+
             }
             return counter;
 
@@ -103,12 +103,12 @@ namespace Homework04
             int counter = 0;
             foreach (char item in charArray)
             {
-               
+
                 if (Char.IsDigit(item))
                 {
                     counter++;
                 }
-                            }
+            }
             return counter;
 
         }
@@ -143,8 +143,7 @@ namespace Homework04
         //    }
 
         //    Console.WriteLine(charArray);
-        //    Console.ReadLine();
-
+           
         //}
         #endregion
         #region Task05
