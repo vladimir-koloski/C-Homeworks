@@ -75,28 +75,43 @@ namespace Homework04
         #endregion
 
         #region Task03
-        //static void Main(string[] args)
-        //{
+        static void Main(string[] args)
+        {
+            Console.WriteLine(VowelsCounter("Console Something 352")); 
+            Console.WriteLine(DigitsCounter("352"));
+            Console.ReadLine();
+        }
 
-        //    Console.WriteLine(DigitsCounter("academy"));
-        //    Console.ReadLine();
-        //}
+        public static int VowelsCounter(string word)
+        {
+            char[] charArray = word.ToCharArray();
+            int counter = 0;
+            foreach (char item in charArray)
+            {
+                if (item != 'a' && item != 'e' && item != 'o' && item != 'i' && item != 'u' && !Char.IsDigit(item))
+                {
+                    counter++;
+                }
+         
+            }
+            return counter;
 
-        //public static int DigitsCounter(string word)
-        //{
-        //    char[] charArray = word.ToCharArray();
-        //    int counter = 0;
-        //    foreach (char item in charArray)
-        //    {
-        //        if (item != 'a' && item != 'e'&& item != 'o' && item != 'i' && item != 'u')
-        //        {
-        //            counter ++;
-        //        }
+        }
+        public static int DigitsCounter(string word)
+        {
+            char[] charArray = word.ToCharArray();
+            int counter = 0;
+            foreach (char item in charArray)
+            {
+               
+                if (Char.IsDigit(item))
+                {
+                    counter++;
+                }
+                            }
+            return counter;
 
-        //    }
-        //    return counter;
-
-        //}
+        }
 
         #endregion
 
@@ -113,11 +128,11 @@ namespace Homework04
 
         //    Console.WriteLine("Enter a sentence");
         //    string sentence = Console.ReadLine();
-        //char[] charArray = sentence.ToCharArray();
+        //    char[] charArray = sentence.ToCharArray();
 
-        //    for (int i = 0; i<charArray.Length; i++)
+        //    for (int i = 0; i < charArray.Length; i++)
         //    {
-        //        if (Char.IsLower(charArray[i]) )
+        //        if (Char.IsLower(charArray[i]))
         //        {
         //            Char.ToUpper(charArray[i]);
         //        }
@@ -128,7 +143,7 @@ namespace Homework04
         //    }
 
         //    Console.WriteLine(charArray);
-        //            Console.ReadLine();
+        //    Console.ReadLine();
 
         //}
         #endregion
@@ -165,53 +180,54 @@ namespace Homework04
         #endregion
         //Task 6:
         //Create a function to find the number of times a substring appears in a given string.
-        //    public static void Main()
+        //public static void Main()
+        //{
+        //    string str1;
+        //    string findstring;
+        //    int strt = 0;
+        //    int counter = -1;
+        //    int index = -1;
+
+        //    Console.WriteLine("Find the number of times a specific string appears in a string :");
+
+        //    Console.WriteLine("Input the original string : ");
+        //    str1 = Console.ReadLine();
+        //    Console.WriteLine("Input the string to be searched for : ");
+        //    findstring = Console.ReadLine();
+
+
+        //    while (strt != -1)
         //    {
-        //        string str1;
-        //        string findstring;
-        //        int strt = 0;
-        //        int counter = -1;
-        //        int index = -1;
-
-        //        Console.WriteLine("Find the number of times a specific string appears in a string :");
-
-        //        Console.Write("Input the original string : ");
-        //        str1 = Console.ReadLine();
-        //        Console.Write("Input the string to be searched for : ");
-        //        findstring = Console.ReadLine();
-
-
-        //        while (strt != -1)
-        //        {
-        //            strt = str1.IndexOf(findstring, index + 1);
-        //            counter += 1;
-        //            index = strt;
-        //        }
-        //        Console.WriteLine("The string '{0}' occurs " + counter + " times.", findstring);
-        //        Console.ReadLine();
+        //        strt = str1.IndexOf(findstring, index + 1);
+        //        counter += 1;
+        //        index = strt;
         //    }
+        //    Console.WriteLine($"The string {findstring} occurs " + counter + " times.");
+        //    Console.ReadLine();
         //}
+
 
 
         #region Task07
         //Create a function that calculates the result of raising an integer to another integer(eg 5 raised to 3 = 53 = 5 × 5 × 5 = 125).
-        public static void Main()
-        {
-            Console.WriteLine(NumberPow(5, 3));
-            Console.ReadLine();
-        }
+        //public static void Main()
+        //{
+        //    Console.WriteLine(NumberPow(5, 3));
+        //    Console.ReadLine();
+        //}
 
-        public static int NumberPow(int num1, int exp)
-        {
-            int result = 1;
-            for (int i = 0; i < exp; i++)
-            {
-                result = result * num1;
-            }
-            return result;
-            
-        }
+        //public static int NumberPow(int num1, int exp)
+        //{
+        //    int result = 1;
+        //    for (int i = 0; i < exp; i++)
+        //    {
+        //        result = result * num1;
+        //    }
+        //    return result;
+
+        //}
         #endregion
     }
 }
+
 
