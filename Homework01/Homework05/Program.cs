@@ -41,7 +41,7 @@ namespace Homework05
             #region Task2
             while (true)
             {
-                Car[] carArray = new Car[4]{
+                Car[]carArray = new Car[4]{
 
                 new Car
                 {
@@ -100,20 +100,22 @@ namespace Homework05
                 //Car carInUse1 = new Car();
                 //Console.WriteLine($"Chose a car no.1: {carArray[0].Model}, {carArray[1].Model}, {carArray[2].Model}, {carArray[3].Model}");
                 //string inputCar1 = Console.ReadLine();
-                
+
 
                 //Console.WriteLine($"Chose a driver no.1: {driverArray[0].Name}, {driverArray[1].Name}, {driverArray[2].Name}, {driverArray[3].Name}");
                 //string inputDriver1 = Console.ReadLine();
-                
+
                 //Car carInUse2 = new Car();
                 //Console.WriteLine($"Chose a car no.2: {carArray[0].Model}, {carArray[1].Model}, {carArray[2].Model}, {carArray[3].Model}");
                 //string inputCar2 = Console.ReadLine();
-                
+
                 //Console.WriteLine($"Chose a driver no.2: {driverArray[0].Name}, {driverArray[1].Name}, {driverArray[2].Name}, {driverArray[3].Name}");
                 //string inputDriver2 = Console.ReadLine();
 
-                GameService.InputCarAndDriver(carArray, driverArray);
-                Car.RaceCars();
+                
+                //GameService.InputCarAndDriver(carArray, driverArray);
+                //GameService.InputCarAndDriver(carArray, driverArray);
+                Car.RaceCars(GameService.InputCarAndDriver(carArray, driverArray), GameService.InputCarAndDriver(carArray, driverArray));
 
 
                 Console.WriteLine("Do you want to play again [Y/N]?");

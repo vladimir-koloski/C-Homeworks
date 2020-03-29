@@ -6,51 +6,57 @@ namespace Homework05.Classes
 {
     class GameService
     {
-        public static void InputCarAndDriver(object[] a, object[] b)
+        public static void InputCarAndDriver(Car[]carArray, Driver[]driverArray)
         {
-            Console.WriteLine($"Chose a driver no.1: {b[0].Name}, {b[1].Name}, {b[2].Name}, {b[3].Name}");
-            string inputDriver1 = Console.ReadLine();
-            for (int i = 0; i < b.Length; i++)
-            {
-                if (inputDriver1 == "Vlatko")
-                {
-                    Object Car.Driver = b.[i];
-                };
-                if (inputDriver1 == "Stefan")
-                {
-                    Object Car.Driver = b.[i];
-                };
-                if (inputDriver1 == "Darko")
-                {
-                    Object Car.Driver = b.[i];
-                };
-                if (inputDriver1 == "Zlatan")
-                {
-                    Object Car.Driver = b.[i];
-                };
-            }
-            Console.WriteLine($"Chose a car no.1: {a[0].Model}, {a[1].Model}, {a[2].Model}, {a[3].Model}");
+            Console.WriteLine($"Chose a car no.1: {carArray[0].Model}, {carArray[1].Model}, {carArray[2].Model}, {carArray[3].Model}");
             string inputCar1 = Console.ReadLine();
-            for (int i = 0; i < a.Length; i++)
+            Car userCar = new Car();
+            for (int i = 0; i < carArray.Length; i++)
             {
+                
                 if (inputCar1 == "Panda")
                 {
-                    Object Car = a.[i];
+                    userCar = carArray[i];
                 };
                 if (inputCar1 == "Megan")
                 {
-                    Object Car = a.[i];
+                    userCar = carArray[i];
                 };
                 if (inputCar1 == "Boxer")
                 {
-                    Object Car = a.[i];
+                    userCar = carArray[i];
                 };
                 if (inputCar1 == "Polo")
                 {
-                    Object Car = a.[i];
+                    userCar = carArray[i];
                 };
             }
-            return Object Car;
+            Console.WriteLine($"Chose a driver no.1: {driverArray[0].Name}, {driverArray[1].Name}, {driverArray[2].Name}, {driverArray[3].Name}");
+            string inputDriver1 = Console.ReadLine();
+            Driver userDriver = new Driver();
+            for (int i = 0; i < driverArray.Length; i++)
+            {
+                if (inputDriver1 == "Vlatko")
+                {
+                    userDriver = driverArray[i];
+                };
+                if (inputDriver1 == "Stefan")
+                {
+                    userDriver = driverArray[i];
+                };
+                if (inputDriver1 == "Darko")
+                {
+                    userDriver = driverArray[i];
+                };
+                if (inputDriver1 == "Zlatan")
+                {
+                    userDriver = driverArray[i];
+                };
+                
+            }
+            userDriver = userCar.Driver;
+            //return Car userCar;
         }
+
     }
 }

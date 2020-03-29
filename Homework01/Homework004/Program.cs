@@ -82,36 +82,36 @@ namespace Homework04
         //    Console.ReadLine();
         //}
 
-        public static int VowelsCounter(string word)
-        {
-            char[] charArray = word.ToCharArray();
-            int counter = 0;
-            foreach (char item in charArray)
-            {
-                if (item != 'a' && item != 'e' && item != 'o' && item != 'i' && item != 'u' && !Char.IsDigit(item) && !Char.IsWhiteSpace(item))
-                {
-                    counter++;
-                }
+        //public static int VowelsCounter(string word)
+        //{
+        //    char[] charArray = word.ToCharArray();
+        //    int counter = 0;
+        //    foreach (char item in charArray)
+        //    {
+        //        if (item != 'a' && item != 'e' && item != 'o' && item != 'i' && item != 'u' && !Char.IsDigit(item) && !Char.IsWhiteSpace(item))
+        //        {
+        //            counter++;
+        //        }
 
-            }
-            return counter;
+        //    }
+        //    return counter;
 
-        }
-        public static int DigitsCounter(string word)
-        {
-            char[] charArray = word.ToCharArray();
-            int counter = 0;
-            foreach (char item in charArray)
-            {
+        //}
+        //public static int DigitsCounter(string word)
+        //{
+        //    char[] charArray = word.ToCharArray();
+        //    int counter = 0;
+        //    foreach (char item in charArray)
+        //    {
 
-                if (Char.IsDigit(item))
-                {
-                    counter++;
-                }
-            }
-            return counter;
+        //        if (Char.IsDigit(item))
+        //        {
+        //            counter++;
+        //        }
+        //    }
+        //    return counter;
 
-        }
+        //}
 
         #endregion
 
@@ -141,9 +141,11 @@ namespace Homework04
         //            Char.ToLower(charArray[i]);
         //        }
         //    }
+        //    string newSentence = new string(charArray);
+        //    Console.WriteLine(newSentence);
+        //    return newSentence;
 
-        //    Console.WriteLine(charArray);
-           
+
         //}
         #endregion
         #region Task05
@@ -226,6 +228,26 @@ namespace Homework04
 
         //}
         #endregion
+        #region Task08
+        //Make a method called AgeCalculator
+        //The method will have one input parameter, your birthday date
+        //The method should return your age
+        //Show the age of a user after he inputs a date
+    //    public static void Main()
+    //    {
+    //        Console.WriteLine(AgeCalculator());
+    //        Console.ReadLine();
+    //    }
+
+    //public static int AgeCalculator()
+    //        {
+    //        Console.WriteLine("Enter your birthday date");
+    //        DateTime birthdayDate = DateTime.Parse(Console.ReadLine());
+    //        int myAge = DateTime.Today.Year - birthdayDate.Year;
+    //        return myAge;
+    //        }
+        #endregion
+
     }
 }
 
