@@ -6,7 +6,7 @@ namespace Homework05.Classes
 {
     class GameService
     {
-        public static void InputCarAndDriver(Car[]carArray, Driver[]driverArray)
+        public static Car InputCarAndDriver(Car[]carArray, Driver[]driverArray)
         {
             Console.WriteLine($"Chose a car no.1: {carArray[0].Model}, {carArray[1].Model}, {carArray[2].Model}, {carArray[3].Model}");
             string inputCar1 = Console.ReadLine();
@@ -55,7 +55,7 @@ namespace Homework05.Classes
                 
             }
             userCar.Driver = userDriver;
-            return Car userCar;
+            return userCar;
         }
 
     }
