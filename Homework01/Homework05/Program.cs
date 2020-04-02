@@ -38,9 +38,7 @@ namespace Homework05
             #endregion
 
             #region Task2
-            while (true)
-            {
-                Car[]carArray = new Car[4]{
+            Car[] carArray = new Car[4]{
 
                 new Car
                 {
@@ -67,7 +65,7 @@ namespace Homework05
 
                 }
             };
-                Driver[] driverArray = new Driver[4]{
+            Driver[] driverArray = new Driver[4]{
                  new Driver()
                 {
                     Name = "Vlatko",
@@ -92,6 +90,9 @@ namespace Homework05
                     Skill = 3
                 },
             };
+            while (true)
+            {
+                
                                
                 Car.RaceCars(GameService.InputCarAndDriver(carArray, driverArray), GameService.InputCarAndDriver(carArray, driverArray));
                 

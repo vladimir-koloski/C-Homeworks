@@ -11,49 +11,47 @@ namespace Homework05.Classes
             Console.WriteLine($"Chose a car no.1: {carArray[0].Model}, {carArray[1].Model}, {carArray[2].Model}, {carArray[3].Model}");
             string inputCar1 = Console.ReadLine();
             Car userCar = new Car();
-            for (int i = 0; i < carArray.Length; i++)
-            {
-                
+            
                 if (inputCar1 == "Panda")
                 {
-                    userCar = carArray[i];
-                };
+                    userCar = carArray[0];
+                 
+                }                
                 if (inputCar1 == "Megan")
                 {
-                    userCar = carArray[i];
-                };
+                    userCar = carArray[1];
+                }                
                 if (inputCar1 == "Boxer")
                 {
-                    userCar = carArray[i];
-                };
+                    userCar = carArray[2];                    
+                }                
                 if (inputCar1 == "Polo")
                 {
-                    userCar = carArray[i];
-                };
-            }
+                    userCar = carArray[3];                    
+                }                
+            
+
             Console.WriteLine($"Chose a driver no.1: {driverArray[0].Name}, {driverArray[1].Name}, {driverArray[2].Name}, {driverArray[3].Name}");
             string inputDriver1 = Console.ReadLine();
             Driver userDriver = new Driver();
-            for (int i = 0; i < driverArray.Length; i++)
-            {
+            
                 if (inputDriver1 == "Vlatko")
                 {
-                    userDriver = driverArray[i];
-                };
+                    userDriver = driverArray[0];                    
+                }
                 if (inputDriver1 == "Stefan")
                 {
-                    userDriver = driverArray[i];
-                };
+                    userDriver = driverArray[1];                    
+                }
                 if (inputDriver1 == "Darko")
                 {
-                    userDriver = driverArray[i];
-                };
+                    userDriver = driverArray[2];                    
+                }
                 if (inputDriver1 == "Zlatan")
                 {
-                    userDriver = driverArray[i];
-                };
-                
-            }
+                    userDriver = driverArray[3];                    
+                };           
+
             userCar.Driver = userDriver;
             return userCar;
         }

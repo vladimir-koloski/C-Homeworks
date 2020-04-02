@@ -8,14 +8,15 @@ namespace SEDC.Class06.Exercises.App
     {
         static void Main(string[] args)
         {
-            User [] users = new User[] { };
-            
-            while(true)
+            User[] users = new User[] { };
+            bool login = true;
+            bool success = true;
+            while (login)
             {
                 Console.WriteLine("Enter 'Register' if you want to make new profile or 'Login' if you are allready registred");
                 if (Console.ReadLine() == "Register")
                 {
-                    while (true)
+                    while (success)
                     {
                         Console.WriteLine("Enter email:");
                         string inputEmail = Console.ReadLine();
@@ -29,7 +30,7 @@ namespace SEDC.Class06.Exercises.App
                         string inputPasword = Console.ReadLine();
                         if (!validationService.ValidatePassword(inputPasword))
                         {
-                            Console.WriteLine("Password is not valid plese enter min and special caaracter");
+                            Console.WriteLine("Password is not valid please enter number and one Upper Case letter in password");
                         }
 
                         Console.WriteLine("Enter First Name:");
@@ -46,13 +47,13 @@ namespace SEDC.Class06.Exercises.App
                         users[users.Length - 1] = user;
 
                         Console.WriteLine("Do you want to register another user? Enter yes or no");
+                        if (Console.ReadLine() == "no")
+                        {
+                            success = false;
+                        }
                         if (Console.ReadLine() == "yes")
                         {
                             continue;
-                        }
-                        if (Console.ReadLine() == "no")
-                        {
-                            break;
                         }
                     }
                 }
@@ -67,14 +68,15 @@ namespace SEDC.Class06.Exercises.App
                         if (inputEmail == user.Email && inputPasword == user.Password)
                             Console.WriteLine(user.GetInfo());
                     }
-                    break;
+                    login = false;
+
                 }
                 Console.ReadLine();
-            }                      
-                
-            
+            }
+
+
         }
-            
-        
+
+
     }
 }
