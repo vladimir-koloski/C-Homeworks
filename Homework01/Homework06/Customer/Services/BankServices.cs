@@ -4,7 +4,7 @@ using System.Text;
 using Bussines.Models;
 
 namespace Bussines.Services
-{
+{ 
     public class BankServices
     {
         public int CheckBalance(Customer customer)
@@ -12,14 +12,14 @@ namespace Bussines.Services
             return customer.AccountBalance;
         }
 
-        public int CashWithdrawal (int CheckBalance, int inputAmount)
+        public int CashWithdrawal (Customer customer, int amount)
         {
-            return CheckBalance - inputAmount;
+            return customer.AccountBalance - amount;
         }
 
-        public int CashDeposit(int CheckBalance, int inputAmount)
+        public int CashDeposit(Customer customer, int amount)
         {
-            return CheckBalance + inputAmount;
+            return customer.AccountBalance + amount;
         }
     }
 }

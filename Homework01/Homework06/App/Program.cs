@@ -30,20 +30,24 @@ namespace App
                 if (Console.ReadLine() == "1")
                 {
                     Console.WriteLine($"Your Balance is: {bankServices.CheckBalance(customer)}");
-                }
+                };
                 if (Console.ReadLine() == "2")
                 {
                     Console.WriteLine("Enter the amount you want to Withdrawal");
                     int amountWithdrawal;
                     int.TryParse(Console.ReadLine(), out amountWithdrawal);
-                    Console.WriteLine($"You Withdrawal{amountWithdrawal} You have {bankServices.CashWithdrawal(customer.AccountBalance, amountWithdrawal)} left on your account.");
+                    if(amountWithdrawal > bankServices.CheckBalance(customer))
+                    {
+                        Console.WriteLine($"Your Ballance on account is {bankServices.CheckBalance(customer)} enter valid amount you want to Withdrawal");
+                    }
+                    Console.WriteLine($"You Withdrawal{amountWithdrawal} You have {bankServices.CashWithdrawal(customer, amountWithdrawal)} left on your account.");
                 }
                 if (Console.ReadLine() == "3")
                 {
-                    Console.WriteLine("Enter the amount you want to Withdrawal");
+                    Console.WriteLine("Enter the amount you want to Deposit");
                     int amountDeposit;
                     int.TryParse(Console.ReadLine(), out amountDeposit);
-                    Console.WriteLine($"You Withdrawal{amountDeposit} You have {bankServices.CashDeposit(customer.AccountBalance, amountDeposit)} now on your account.");
+                    Console.WriteLine($"You deposit {amountDeposit}.  You have {bankServices.CashDeposit(customer, amountDeposit)} now on your account.");
                 }
 
                 Console.WriteLine("If you want another transaction enter yes. Otherwise enter no");
@@ -56,8 +60,7 @@ namespace App
                     break;
                 }
                     Console.ReadLine();
-            }
-                
+            }            
             
             
 

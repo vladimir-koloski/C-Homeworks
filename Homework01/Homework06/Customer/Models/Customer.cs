@@ -21,6 +21,16 @@ namespace Bussines.Models
             AccountBalance = accountBalance;
         }
 
+        private int GetPin(Customer customer)
+        {
+            return customer.Pin;
+        }
+
+        private int GetBalance(Customer customer)
+        {
+            return customer.AccountBalance;
+        }
+
         public string GetInfo()
         {
             return GetFullName();
