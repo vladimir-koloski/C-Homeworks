@@ -19,8 +19,18 @@ namespace Bussines.Models
             CardNumber = cardNumber;
             Pin = pin;
             AccountBalance = accountBalance;
+
         }
 
+        public int CashWithdrawal(int amount)
+        {
+            return AccountBalance - amount;
+        }
+
+        public int CashDeposit(int amount)
+        {
+            return AccountBalance + amount;
+        }
         private int GetPin(Customer customer)
         {
             return customer.Pin;

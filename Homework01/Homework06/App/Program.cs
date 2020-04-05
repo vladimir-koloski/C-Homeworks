@@ -43,7 +43,7 @@ namespace App
                     }
                     else
                     {
-                        Console.WriteLine($"You Withdrawal{amountWithdrawal} You have {bankServices.CashWithdrawal(customer, amountWithdrawal)} left on your account.");
+                        Console.WriteLine($"You Withdrawal{amountWithdrawal} You have {customer.CashWithdrawal(amountWithdrawal)} left on your account.");
                     }                        
                 }
                 if (transaction == "3")
@@ -51,7 +51,7 @@ namespace App
                     Console.WriteLine("Enter the amount you want to Deposit");
                     int amountDeposit;
                     int.TryParse(Console.ReadLine(), out amountDeposit);
-                    Console.WriteLine($"You deposit {amountDeposit}.  You have {bankServices.CashDeposit(customer, amountDeposit)} now on your account.");
+                    Console.WriteLine($"You deposit {amountDeposit}.  You have {customer.CashDeposit(amountDeposit)} now on your account.");
                 }
 
                 Console.WriteLine("If you want another transaction enter yes. Otherwise enter no");

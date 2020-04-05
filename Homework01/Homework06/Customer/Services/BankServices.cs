@@ -12,14 +12,6 @@ namespace Bussines.Services
             return customer.AccountBalance;
         }
 
-        public int CashWithdrawal (Customer customer, int amount)
-        {
-            return customer.AccountBalance - amount;
-        }
-
-        public int CashDeposit(Customer customer, int amount)
-        {
-            return customer.AccountBalance + amount;
-        }
+        
     }
 }
