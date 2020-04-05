@@ -24,12 +24,14 @@ namespace Bussines.Models
 
         public int CashWithdrawal(int amount)
         {
-            return AccountBalance - amount;
+            AccountBalance -= amount;
+            return AccountBalance;
         }
 
         public int CashDeposit(int amount)
         {
-            return AccountBalance + amount;
+            AccountBalance += amount;
+            return AccountBalance;
         }
         private int GetPin(Customer customer)
         {
