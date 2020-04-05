@@ -7,63 +7,64 @@ namespace SEDC.Class06.Exercises.App
     public class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Enter 'Register' if you want to make new profile or 'Login' if you are allready registred");
-            if (Console.ReadLine() == "Register")
+        {while(true)
             {
-            Console.WriteLine("Enter email:");
-            string inputEmail = Console.ReadLine();
-            EnterEmail(inputEmail);
-            Console.WriteLine("Enter password:");
-            string inputPasword = Console.ReadLine();
-            EnterPassword(inputPasword);
-            Console.WriteLine("Enter First Name:");
-            string inputFirstName = Console.ReadLine();
-            Console.WriteLine("Enter Last Name:");
-            string inputLastName = Console.ReadLine();
-            Console.WriteLine("Enter Date of Birth:");
-            DateTime inpututDate = Convert.ToDateTime(Console.ReadLine());
-            User[] users = new User[] { };
-            User user = new User(inputEmail, inputPasword, inputFirstName, inputLastName, inpututDate);
-            Register(User[] users, user);
-                   
-            }
-            //Console.WriteLine("Do you want to register another user? Enter yes or no");
-            //string action = Console.ReadLine();
-
-            //if (action == "yes")
-            //{
-            //    Register();
-            //}
-            //else
-            //{
-            //    registration = false;
-            //}
-            //if (Console.ReadLine() == "Login")
-            {
-                Console.WriteLine("Enter email:");
-                string inputEmail = Console.ReadLine();                
-                Console.WriteLine("Enter password:");
-                string inputPasword = Console.ReadLine();
-                if(Login(inputEmail, inputPasword) == true)
+                User[] users = new User[] { };
+                Console.WriteLine("Enter 'Register' if you want to make new profile or 'Login' if you are allready registred");
+                string option1 = Console.ReadLine();
+                if (option1 == "Register")
                 {
-                    PrintUsers(User[] users);
-                }              
-                
-                
+                    Console.WriteLine("Enter email:");
+                    string inputEmail = Console.ReadLine();
+                    EnterEmail(inputEmail);
+                    Console.WriteLine("Enter password:");
+                    string inputPasword = Console.ReadLine();
+                    EnterPassword(inputPasword);
+                    Console.WriteLine("Enter First Name:");
+                    string inputFirstName = Console.ReadLine();
+                    Console.WriteLine("Enter Last Name:");
+                    string inputLastName = Console.ReadLine();
+                    Console.WriteLine("Enter Date of Birth:");
+                    DateTime inpututDate = Convert.ToDateTime(Console.ReadLine());
+
+                    User user = new User(inputEmail, inputPasword, inputFirstName, inputLastName, inpututDate);
+                    Register(users, user);
+                    PrintUsers(users);
+                }
+                if (option1 == "Login")
+                {
+                    Console.WriteLine("Enter email:");
+                    string inputEmail = Console.ReadLine();
+                    Console.WriteLine("Enter password:");
+                    string inputPasword = Console.ReadLine();
+                    if (Login(inputEmail, inputPasword, users) == true)
+                    {
+                        PrintUsers(users);
+                    }
+                }
+                Console.WriteLine("Do you want to register another user? Enter yes or no");
+                string action = Console.ReadLine();
+
+                if (action == "yes")
+                {
+                    continue;
+                }
+                if (action == "yes")
+                {
+                    break;
+                }
             }
 
-                Console.ReadLine();
+            Console.ReadLine();
         }
 
-        public void PrintUsers(User [] users)
+        public static void PrintUsers(User [] users)
         {
             foreach (var user in users)
             {
                Console.WriteLine(user.GetInfo());
             }
         }
-
         
         public static void Register(User[] users, User user)            
         {      
@@ -74,15 +75,16 @@ namespace SEDC.Class06.Exercises.App
             }
         }
         
-        public bool Login(string email, string password)
+        public static bool Login(string email, string password, User [] users)
             {
                 foreach (var user in users)
                 {
-                    if (email == user.Email && password == user.Password);
-                       
-                }
+                if (email == user.Email && password == user.Password);
+                    
                 return true;
-                
+                }
+                return false;             
+                                
             }
 
              public static void EnterEmail(string email)
@@ -103,7 +105,6 @@ namespace SEDC.Class06.Exercises.App
                 }
                 return password;
             }
-
 
         }
 

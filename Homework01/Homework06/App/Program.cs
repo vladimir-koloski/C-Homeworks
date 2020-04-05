@@ -27,11 +27,12 @@ namespace App
                 Console.WriteLine("1.Check Balance");
                 Console.WriteLine("2.Cash Withdrawal");
                 Console.WriteLine("3.Cash Deposit");
-                if (Console.ReadLine() == "1")
+                string transaction = Console.ReadLine();
+                if (transaction == "1")
                 {
                     Console.WriteLine($"Your Balance is: {bankServices.CheckBalance(customer)}");
                 };
-                if (Console.ReadLine() == "2")
+                if (transaction == "2")
                 {
                     Console.WriteLine("Enter the amount you want to Withdrawal");
                     int amountWithdrawal;
@@ -40,9 +41,12 @@ namespace App
                     {
                         Console.WriteLine($"Your Ballance on account is {bankServices.CheckBalance(customer)} enter valid amount you want to Withdrawal");
                     }
-                    Console.WriteLine($"You Withdrawal{amountWithdrawal} You have {bankServices.CashWithdrawal(customer, amountWithdrawal)} left on your account.");
+                    else
+                    {
+                        Console.WriteLine($"You Withdrawal{amountWithdrawal} You have {bankServices.CashWithdrawal(customer, amountWithdrawal)} left on your account.");
+                    }                        
                 }
-                if (Console.ReadLine() == "3")
+                if (transaction == "3")
                 {
                     Console.WriteLine("Enter the amount you want to Deposit");
                     int amountDeposit;
@@ -59,10 +63,10 @@ namespace App
                 {
                     break;
                 }
-                    Console.ReadLine();
-            }            
-            
-            
+                    
+            }
+            Console.ReadLine();
+
 
         }
 
