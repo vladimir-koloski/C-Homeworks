@@ -7,109 +7,73 @@ namespace SEDC.Class06.Exercises.App
     public class Program
     {
         static void Main(string[] args)
-        {while(true)
+        {
+            // Generate default users
+            User[] users = GenerateUsers();
+            // ValidationSevice validationSevice = new ValidationSevice();
+            var validationSevice = new ValidationService();
+
+            while (true)
             {
-                User[] users = new User[] { };
-                Console.WriteLine("Enter 'Register' if you want to make new profile or 'Login' if you are allready registred");
-                string option1 = Console.ReadLine();
-                if (option1 == "Register")
+                Console.WriteLine("\nRegistration press 1 \nLogin press 2 \nExit press 3");
+                string userSelection = Console.ReadLine();
+                if (!int.TryParse(userSelection, out int validUserSelection))
                 {
-                    Console.WriteLine("Enter email:");
-                    string inputEmail = Console.ReadLine();
-                    EnterEmail(inputEmail);
-                    Console.WriteLine("Enter password:");
-                    string inputPasword = Console.ReadLine();
-                    EnterPassword(inputPasword);
-                    Console.WriteLine("Enter First Name:");
-                    string inputFirstName = Console.ReadLine();
-                    Console.WriteLine("Enter Last Name:");
-                    string inputLastName = Console.ReadLine();
-                    Console.WriteLine("Enter Date of Birth:");
-                    DateTime inpututDate = Convert.ToDateTime(Console.ReadLine());
-
-                    User user = new User(inputEmail, inputPasword, inputFirstName, inputLastName, inpututDate);
-                    Register(users, user);
-                    PrintUsers(users);
-                }
-                if (option1 == "Login")
-                {
-                    Console.WriteLine("Enter email:");
-                    string inputEmail = Console.ReadLine();
-                    Console.WriteLine("Enter password:");
-                    string inputPasword = Console.ReadLine();
-                    if (Login(inputEmail, inputPasword, users) == true)
-                    {
-                        PrintUsers(users);
-                    }
-                }
-                Console.WriteLine("Do you want to register another user? Enter yes or no");
-                string action = Console.ReadLine();
-
-                if (action == "yes")
-                {
+                    Console.WriteLine("Not valid input. Please try again.");
                     continue;
                 }
-                if (action == "yes")
+
+                switch (validUserSelection)
                 {
-                    break;
+                    case 1:
+                        User newUser = Authentication.Register(users, validationSevice);
+                        Array.Resize(ref users, users.Length + 1);
+                        users[users.Length - 1] = newUser;
+                        Console.Clear();
+                        Console.WriteLine($"Thank you for registering {newUser.GetFullName()} \n");
+                        PrintUsers(users);
+                        break;
+                    case 2:
+                        User user = Authentication.Login(users, validationSevice);
+                        if (user == null)
+                        {
+                            break;
+                        }
+                        Console.Clear();
+                        Console.WriteLine($"Welcome {user.GetFullName()} \n");
+                        PrintUsers(users);
+                        break;
+                    case 3:
+                        Console.WriteLine("Thank you for using our application");
+                        Console.ReadLine();
+                        return;
+                    default:
+                        Console.WriteLine("Wrong input");
+                        Console.ReadLine();
+                        return;
                 }
             }
-
-            Console.ReadLine();
         }
 
-        public static void PrintUsers(User [] users)
+        static User[] GenerateUsers()
         {
-            foreach (var user in users)
+            return new User[]
             {
-               Console.WriteLine(user.GetInfo());
-            }
-        }
-        
-        public static void Register(User[] users, User user)            
-        {      
-        
-            {
-                    Array.Resize(ref users, users.Length + 1);
-                    users[users.Length - 1] = user;               
-            }
-        }
-        
-        public static bool Login(string email, string password, User [] users)
-            {
-                foreach (var user in users)
-                {
-                if (email == user.Email && password == user.Password);
-                    
-                return true;
-                }
-                return false;             
-                                
-            }
-
-             public static void EnterEmail(string email)
-            {
-                var validationService = new ValidationService();
-                if (!validationService.ValidateEmail(email))
-                {
-                    Console.WriteLine("Enter Valid email");
-                }
-
-            }
-            public static string EnterPassword(string password)
-            {
-                var validationService = new ValidationService();
-                if (!validationService.ValidatePassword(password))
-                {
-                    Console.WriteLine("Password is not valid please enter number and one Upper Case letter in password");
-                }
-                return password;
-            }
-
+                new User("bob_bobsi@example.com", "eXample6", "Bob", "Bobski",  new DateTime(1979, 05, 25)),
+                new User("trajanstevkovski@gmail.com", "tesT4444", "Trajan", "Stevkovski",  new DateTime(1987, 04, 15)),
+                new User("tosho_todorovski@yahoo.com", "1234Test","Tosho", "Todorovski",  new DateTime(1990, 06, 03))
+            };
         }
 
-
+        static void PrintUsers(User[] users)
+        {
+            foreach (User user in users)
+            {
+                Console.WriteLine(user.GetInfo());
+            }
+        }
     }
+}
 
 
 

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Homework07.Bussines.Cars
+namespace Homework07.Bussines.Models
 {
     public class Car
     {
@@ -13,7 +13,7 @@ namespace Homework07.Bussines.Cars
         public int Doors { get; set; }
         public int TopSpeed { get; set; }
 
-        public Consumption consumption { get; set; }
+        public Consumption Consumption { get; set; }
         public EngineType EngineType { get; set; }
 
         public Car(string brand, string model, int doors, int topSpeed, Consumption consumption, EngineType engineType)
@@ -23,7 +23,7 @@ namespace Homework07.Bussines.Cars
             Model = model;
             Doors = doors;
             TopSpeed = topSpeed;
-            this.consumption = consumption;
+            Consumption = consumption;
             EngineType = engineType;
         }
 

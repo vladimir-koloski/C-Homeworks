@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Homework07.Bussines.Cars
+namespace Homework07.Bussines.Models
 {
     public class ElectricCar : Car
     {
@@ -16,16 +16,21 @@ namespace Homework07.Bussines.Cars
 
         public int Drive(int distance)
         {
-            int consumption1;
-            int.TryParse(ElectricCar Consumption, out consumption1);
+
+            int consumption1 = Convert.ToInt32(Consumption);
             BatteryUsage -= distance * consumption1 / 10;
-            return BatteryUsage
+            if (BatteryUsage < 0)
+            {
+                Console.WriteLine($"You dont have baterry for the distance of{distance}");
+            }
+            return BatteryUsage;
         }
         public int Recharge(int minutes)
         {
+
             BatteryCapacity += minutes / 10;
             return BatteryCapacity;
-                
+
         }
 
     }
