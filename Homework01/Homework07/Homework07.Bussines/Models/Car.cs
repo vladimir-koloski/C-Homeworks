@@ -25,11 +25,12 @@ namespace Homework07.Bussines.Models
             TopSpeed = topSpeed;
             Consumption = consumption;
             EngineType = engineType;
+            
         }
 
         public string PrintInfo()
         {
-            return $"The brand of the car is: {Brand}, model {Model} and its top speed is {TopSpeed}";
+            return $"The brand of the car is: {Brand}, model {Model} and its top speed is {TopSpeed} km/h";
         }
 
         public int GenerateId()

@@ -32,7 +32,11 @@ namespace Homework07.Bussines.Models
             {
                 Console.WriteLine($"Can't refuel more than {freeCapacity} litres");
             }
-            CurrentFuel += fuel;
+            else
+            {
+                CurrentFuel += fuel;
+            }
+            
             return CurrentFuel;
         }
     }

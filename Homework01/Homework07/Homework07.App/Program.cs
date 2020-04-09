@@ -10,10 +10,16 @@ namespace Homework07.App
         {
             Console.WriteLine("Hello World!");
 
-            FuelCar fuelcar1 = new FuelCar("Peugeot", "206", 5, 140, Consumption.Economic, EngineType.Diesel, 15, 40);
-
+            FuelCar fuelCar1 = new FuelCar("Peugeot", "206", 5, 140, Consumption.Medium, EngineType.Diesel, 50, 5);
+            ElectricCar electricCar = new ElectricCar("Tesla", "x", 3, 160, Consumption.Economic, EngineType.Electric, 100, 33);
+            //Console.WriteLine(fuelCar1.PrintInfo());
+            //fuelCar1.Drive(800);
+            //electricCar.Drive(1200);
+            //fuelCar1.Refuel(85);
+            electricCar.Recharge(660);
+            Console.WriteLine(electricCar.BatteryUsage);
             //fuelcar1.PrintInfo();
-            Console.WriteLine(fuelcar1);
+
             Console.ReadLine();
         }
     }
