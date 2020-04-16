@@ -7,14 +7,16 @@ namespace Homework07.Bussines.Models
 {
     public class FuelCar : Car
     {
-        public FuelCar(string brand, string model, int doors, int topSpeed, Consumption consumption, EngineType engineType, int fuelCapacity, int currentFuel)
-            : base(brand, model, doors, topSpeed, consumption, engineType)
+        public FuelCar(string brand, string model, int doors, int topSpeed, Consumption consumption, int fuelCapacity, int currentFuel)
+            : base(brand, model, doors, topSpeed, consumption)
         {
             FuelCapacity = fuelCapacity;
             CurrentFuel = currentFuel;
+            EngineType = EngineType.Petrol;
         }
         public int FuelCapacity { get; set; }
         public int CurrentFuel { get; set; }
+        public EngineType EngineType { get; set; }
         public int Drive(int distance)
         {
             int consumption1 = Convert.ToInt32(Consumption);

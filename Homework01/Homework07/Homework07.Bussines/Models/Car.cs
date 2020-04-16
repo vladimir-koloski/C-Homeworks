@@ -14,9 +14,9 @@ namespace Homework07.Bussines.Models
         public int TopSpeed { get; set; }
 
         public Consumption Consumption { get; set; }
-        public EngineType EngineType { get; set; }
+        
 
-        public Car(string brand, string model, int doors, int topSpeed, Consumption consumption, EngineType engineType)
+        public Car(string brand, string model, int doors, int topSpeed, Consumption consumption)
         {
             Id = GenerateId();
             Brand = brand;
@@ -24,7 +24,7 @@ namespace Homework07.Bussines.Models
             Doors = doors;
             TopSpeed = topSpeed;
             Consumption = consumption;
-            EngineType = engineType;
+            
             
         }
 

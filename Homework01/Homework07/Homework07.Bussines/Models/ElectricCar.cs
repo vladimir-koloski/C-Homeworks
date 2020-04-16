@@ -8,7 +8,7 @@ namespace Homework07.Bussines.Models
     public class ElectricCar : Car
     {
         public ElectricCar(string brand, string model, int doors, int topSpeed, Consumption consumption, EngineType engineType, int batteryCapacity, int batteryUsage)
-            : base(brand, model, doors, topSpeed, consumption, engineType)
+            : base(brand, model, doors, topSpeed, consumption)
         {
             BatteryCapacity = batteryCapacity;
             BatteryUsage = batteryUsage;
