@@ -8,10 +8,21 @@ namespace SEDC.Class07.MovieStore.Entities.Models
     public class Movie
     {
         public string Title { get; set; }
-        public string Decription { get; set; }
+        public string Description { get; set; }
         public int Year { get; set; }
         public Genre Genre { get; set; }
         private int Price { get; set; }
+        public bool IsAvailable { get; set; }
+
+        public Movie(string title, string description, int year, Genre genre)
+        {
+            Title = title;
+            Description = description;
+            Year = year;
+            Genre = genre;
+            IsAvailable = true;
+
+        }
 
         public int SetPrice()
         {
@@ -29,6 +40,11 @@ namespace SEDC.Class07.MovieStore.Entities.Models
                 Price = r.Next(300, 500);
             }
             return Price;
+        }
+
+        public bool ChangeAvailability()
+        {
+            return IsAvailable = !IsAvailable;
         }
     }
 }
