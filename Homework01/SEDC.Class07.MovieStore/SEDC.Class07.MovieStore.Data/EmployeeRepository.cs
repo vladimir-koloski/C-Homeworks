@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SEDC.Class07.MovieStore.Entities.Database
+namespace SEDC.Class07.MovieStore.Data
 {
     public class EmployeeRepository : Database
     {
@@ -18,14 +18,7 @@ namespace SEDC.Class07.MovieStore.Entities.Database
         }
         public Movie[] GetMovies()
         {
-            foreach(Movie movie in Movies)
-            {
-                if(movie.IsAvailable == true)
-                {
-                    return movie;
-                }
-            }
-            return null;
+            return Movies;
         }
     }
 }

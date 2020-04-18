@@ -46,5 +46,10 @@ namespace SEDC.Class07.MovieStore.Entities.Models
         {
             return IsAvailable = !IsAvailable;
         }
+
+        public string Info()
+        {
+            return $"Title: {Title}, year: {Year}, genre: {Genre}";
+        }
     }
 }
