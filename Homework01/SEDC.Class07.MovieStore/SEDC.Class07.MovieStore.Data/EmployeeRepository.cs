@@ -20,5 +20,19 @@ namespace SEDC.Class07.MovieStore.Data
         {
             return Movies;
         }
+
+        public Movie[] GetAvailableMovies()
+        {
+            foreach(Movie movie in Movies)
+            {
+                if(movie.IsAvailable == false)
+                {
+                    return null;
+                }
+            }
+            return Movies;
+        }
+
+        
     }
 }

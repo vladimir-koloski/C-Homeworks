@@ -1,4 +1,5 @@
 ﻿using SEDC.Class07.MovieStore.Entities.Enumerations;
+using SEDC.Class07.MovieStore.Entities.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,9 +16,11 @@ namespace SEDC.Class07.MovieStore.Entities.BaseModels
         public int PhoneNumber { get; set; }
         public DateTime DateOfRegistration { get; set; }
         public Role Role { get; set; }
+        public int Id { get; set; }
 
         public Member(string firstName, string lastName, int age, string userName, string password, int phoneNumber, Role role)
         {
+            Id = IdGenerator.GenerateId();
             FirstName = firstName;
             LastName = lastName;
             Age = age;
@@ -30,7 +33,7 @@ namespace SEDC.Class07.MovieStore.Entities.BaseModels
 
         public string DysplayInfo()
         {
-            return $"1. {FirstName} {LastName} Registred on: {DateOfRegistration}";
+            return $"{Id} {FirstName} {LastName} Registred on: {DateOfRegistration}";
         }
     }
 }

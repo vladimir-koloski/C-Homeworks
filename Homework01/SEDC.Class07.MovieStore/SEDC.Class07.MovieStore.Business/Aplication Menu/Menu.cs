@@ -14,5 +14,13 @@ namespace SEDC.Class07.MovieStore.Business.Aplication_Menu
                 Console.WriteLine(movie.Info());
             }
         }
+
+        public static void PrintUsers(User[] users)
+        {
+            foreach(User user in users)
+            {
+                Console.WriteLine(user.DysplayInfo());
+            }
+        }
     }
 }

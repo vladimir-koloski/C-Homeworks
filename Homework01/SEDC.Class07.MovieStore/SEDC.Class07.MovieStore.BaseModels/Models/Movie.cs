@@ -1,4 +1,5 @@
 ﻿using SEDC.Class07.MovieStore.Entities.Enumerations;
+using SEDC.Class07.MovieStore.Entities.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,7 @@ namespace SEDC.Class07.MovieStore.Entities.Models
         public Genre Genre { get; set; }
         private int Price { get; set; }
         public bool IsAvailable { get; set; }
+        public int Id { get; set; }
 
         public Movie(string title, string description, int year, Genre genre)
         {
@@ -21,6 +23,7 @@ namespace SEDC.Class07.MovieStore.Entities.Models
             Year = year;
             Genre = genre;
             IsAvailable = true;
+            Id = IdGenerator.GenerateId();
 
         }
 
@@ -49,7 +52,7 @@ namespace SEDC.Class07.MovieStore.Entities.Models
 
         public string Info()
         {
-            return $"Title: {Title}, year: {Year}, genre: {Genre}";
+            return $"{Id} Title: {Title}, year: {Year}, genre: {Genre}";
         }
     }
 }

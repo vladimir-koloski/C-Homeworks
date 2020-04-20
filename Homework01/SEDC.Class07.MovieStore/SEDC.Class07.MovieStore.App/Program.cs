@@ -12,13 +12,21 @@ namespace SEDC.Class07.MovieStore.App
         static void Main(string[] args)
         {
             var employeeRepository = new EmployeeRepository();
-            //User[] users = employeeRepository.GetUsers();
+            var movieRepository = new MovieRepository();
+            User[] users = employeeRepository.GetUsers();
             //Console.WriteLine(users);
             var validationService = new ValidationService();
 
             Menu.PrintMovies(employeeRepository.GetMovies());
+            Menu.PrintUsers(employeeRepository.GetUsers());
 
-            
+            Menu.PrintMovies(employeeRepository.GetAvailableMovies());
+            Movie movie = movieRepository.GetMovieById(3);
+
+            movie.ChangeAvailability();
+            Menu.PrintMovies(employeeRepository.GetAvailableMovies());
+
+
             Employee employee = new Employee("Vladimir", "Koloski", 25, "vlatko_vin", "ludiot", 075215803, Role.Employee, 162);
             Console.WriteLine(employee.SetSalary());
             Console.ReadLine();
