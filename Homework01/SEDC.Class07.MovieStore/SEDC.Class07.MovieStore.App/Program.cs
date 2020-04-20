@@ -17,17 +17,18 @@ namespace SEDC.Class07.MovieStore.App
             //Console.WriteLine(users);
             var validationService = new ValidationService();
 
-            Menu.PrintMovies(employeeRepository.GetMovies());
+            Menu.PrintMovies(movieRepository.GetMovies());
             Menu.PrintUsers(employeeRepository.GetUsers());
 
-            Menu.PrintMovies(employeeRepository.GetAvailableMovies());
+            Menu.PrintMovies(movieRepository.GetAvailableMovies());
             Movie movie = movieRepository.GetMovieById(3);
+            Console.WriteLine(movie.Info());
 
             movie.ChangeAvailability();
-            Menu.PrintMovies(employeeRepository.GetAvailableMovies());
+            Menu.PrintMovies(movieRepository.GetAvailableMovies());
 
 
-            Employee employee = new Employee("Vladimir", "Koloski", 25, "vlatko_vin", "ludiot", 075215803, Role.Employee, 162);
+            Employee employee = new Employee("Vladimir", "Koloski", 25, "vlatko_vin", "vlatko@vlatko.com", 075215803, Role.Employee, 162);
             Console.WriteLine(employee.SetSalary());
             Console.ReadLine();
         }
