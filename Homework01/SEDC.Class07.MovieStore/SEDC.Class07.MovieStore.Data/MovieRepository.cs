@@ -17,16 +17,16 @@ namespace SEDC.Class07.MovieStore.Data
             return Movies;
         }
 
-        public Movie[] GetAvailableMovies()
+        public void GetAvailableMovies()
         {
             foreach (Movie movie in Movies)
             {
-                if (movie.IsAvailable == false)
+                if (movie.IsAvailable)
                 {
-                    return null;
+                    Console.WriteLine(movie.Info());
                 }
             }
-            return Movies;
+            
         }
         public Movie GetMovieById(int movieId)
         {

@@ -127,15 +127,15 @@ namespace SEDC.Class07.MovieStore.Entities.Services
             return null;
         }
 
-        //public void DeleteUser(int deleteUserId, User[] users)
-        //{
-        //    foreach (User user in users)
-        //    {
-        //        if (user.Id == deleteUserId)
-        //        {
-        //            users.Remove(user);
-        //        }
-        //    }
-        //}
+        public void DeleteUser(int deleteUserId, User[] users)
+        {
+            for (int i = 0; i < users.Length; i++)
+            {
+                if(users[i].Id == deleteUserId)
+                {
+                    users[i] = null;
+                }                
+            }            
+        }
     }
 }

@@ -11,12 +11,12 @@ namespace SEDC.Class07.MovieStore.Entities.Models
     {
         
         public TypeOfSubscription TypeOfSubscription { get; set; }
-        public Movie[] Movie { get; set; }
+        public Movie[] Movies { get; set; }
 
-        public User(string firstName, string lastName, int age, string userName, string password, int phoneNumber, Role role, TypeOfSubscription typeOfSubscription )
+        public User(string firstName, string lastName, int age, string userName, string password, int phoneNumber, Role role, TypeOfSubscription TypeOfSubscription)
             : base (firstName, lastName, age, userName, password, phoneNumber, role)
         {
-            TypeOfSubscription = typeOfSubscription;
+            TypeOfSubscription = TypeOfSubscription;
         }
     }
 }

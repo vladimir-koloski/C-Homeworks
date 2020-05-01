@@ -13,19 +13,27 @@ namespace SEDC.Class07.MovieStore.App
         {
             var employeeRepository = new EmployeeRepository();
             var movieRepository = new MovieRepository();
-            User[] users = employeeRepository.GetUsers();
+            var userRepository = new UserRepository();
+            User[] users = userRepository.GetUsers();
             //Console.WriteLine(users);
             var validationService = new ValidationService();
 
             Menu.PrintMovies(movieRepository.GetMovies());
-            Menu.PrintUsers(employeeRepository.GetUsers());
+            
 
-            Menu.PrintMovies(movieRepository.GetAvailableMovies());
-            Movie movie = movieRepository.GetMovieById(3);
+            movieRepository.GetAvailableMovies();
+            Movie movie = movieRepository.GetMovieById(18);
+            Console.WriteLine("---------------------------------");
             Console.WriteLine(movie.Info());
 
             movie.ChangeAvailability();
-            Menu.PrintMovies(movieRepository.GetAvailableMovies());
+            movieRepository.GetAvailableMovies();
+            Console.WriteLine("---------------------------------");
+            Menu.PrintUsers(userRepository.GetUsers());
+
+            Console.WriteLine(userRepository.CalcMembershipLeft(users[0]));
+
+            
 
 
             Employee employee = new Employee("Vladimir", "Koloski", 25, "vlatko_vin", "vlatko@vlatko.com", 075215803, Role.Employee, 162);

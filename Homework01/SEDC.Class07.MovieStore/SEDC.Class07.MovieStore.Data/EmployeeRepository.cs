@@ -12,10 +12,7 @@ namespace SEDC.Class07.MovieStore.Data
         {
         }
 
-        public User[] GetUsers()
-        {
-            return Users;
-        }
+        
         
 
         

@@ -22,5 +22,7 @@ namespace SEDC.Class07.MovieStore.Business.Aplication_Menu
                 Console.WriteLine(user.DysplayInfo());
             }
         }
+
+
     }
 }
