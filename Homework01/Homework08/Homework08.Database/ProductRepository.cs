@@ -28,22 +28,23 @@ namespace Homework08.Database
 
         public List<Product> GetProductByCategory(Category category, List<Product> products)
         {
+            var filteredProductsByCategory = new List<Product>();
             foreach (Product product in GetAllProducts())
             {
                 if (product.Category != category)
                 {
-                    products.Remove(product);
+                    filteredProductsByCategory.Add(product);
                 }
             }
-            return products;
+            return filteredProductsByCategory;
         }
 
-        public static List<Product> GetProductsInPriceRange(int from, int to, List<Product> products)
+        public List<Product> GetProductsInPriceRange(int from, int to)
         {
             var filteredproducts = new List<Product>();
             for(int i = 0; i < products.Count; i++)
             {
-                if(products[i].Price > from && products[i].Price < to)
+                if(products[i].Price >= from && products[i].Price <= to)
                 {
                     filteredproducts.Add(products[i]);
                 }
@@ -51,20 +52,21 @@ namespace Homework08.Database
             return filteredproducts;
         }
 
-        public void PrintProductsId(List<Product> products)
+        public List<int> GetProductsId(List<Product> products)
         {
+            var productsId = new List<int>();
             foreach (var p in products)
             {
-                Console.WriteLine($"Id: {p.Id}");
+                productsId.Add(p.Id);
             }
-
+            return productsId;
         }
 
-        public static Product FindProductByName(string name, List<Product> products)
+        public  Product FindProductByName(string name, List<Product> products)
         {
             foreach (var p in products)
             {
-                if (p.Name.ToLower().Contains(name))
+                if (p.Name.ToLower().Contains(name.ToLower()))
                 {
                     return p;
                 }
@@ -72,19 +74,19 @@ namespace Homework08.Database
             return null;
         }
 
-        public static Product GetProductPrice(int id, List<Product> products)
+        public int GetProductPrice(int id, List<Product> products)
         {
             foreach (var p in products)
             {
                 if (p.Id == id)
                 {
-                    return p;
+                    return p.Price;
                 }
             }
             return null;
         }
 
-        public static Product GetCheapestProduct(List<Product> products)
+        public Product GetCheapestProduct()
         {
             Product cheapestProduct = products[0];
             for (int i = 0; i < products.Count; i++)
@@ -97,7 +99,7 @@ namespace Homework08.Database
             return cheapestProduct;
         }
 
-        public static Product GetExpensiveProduct(List<Product> products)
+        public Product GetExpensiveProduct()
         {
             Product expensiveProduct = products[0];
             for (int i = 0; i < products.Count; i++)

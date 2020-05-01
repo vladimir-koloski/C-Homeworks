@@ -16,11 +16,12 @@ namespace Homework08.App
 
             //productRepository.PrintProducts(productRepository.GetAllProducts());
 
-            //productRepository.GetProductByCategory(Category.LapTop, productRepository.GetAllProducts());
+            productRepository.GetProductByCategory(Category.LapTop, productRepository.GetAllProducts());
+
 
             //productRepository.GetCheapestProduct(productRepository.GetAllProducts());
 
-            productRepository.DeleteProduct(1, productRepository.GetAllProducts());
+            //productRepository.DeleteProduct(1, productRepository.GetAllProducts());
 
 
 
