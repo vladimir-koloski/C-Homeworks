@@ -19,7 +19,7 @@ namespace Homework08.Models
             Id = _idGenerator;
             Name = name;
             Price = price;
-            Category = Category;
+            Category = category;
         }
 
         public string Info()

@@ -29,9 +29,9 @@ namespace Homework08.Database
         public List<Product> GetProductByCategory(Category category, List<Product> products)
         {
             var filteredProductsByCategory = new List<Product>();
-            foreach (Product product in GetAllProducts())
+            foreach (Product product in products)
             {
-                if (product.Category != category)
+                if (product.Category == category)
                 {
                     filteredProductsByCategory.Add(product);
                 }
@@ -83,10 +83,10 @@ namespace Homework08.Database
                     return p.Price;
                 }
             }
-            return null;
+            return 0;
         }
 
-        public Product GetCheapestProduct()
+        public Product GetCheapestProduct(List<Product> products)
         {
             Product cheapestProduct = products[0];
             for (int i = 0; i < products.Count; i++)
@@ -99,7 +99,7 @@ namespace Homework08.Database
             return cheapestProduct;
         }
 
-        public Product GetExpensiveProduct()
+        public Product GetExpensiveProduct(List<Product> products)
         {
             Product expensiveProduct = products[0];
             for (int i = 0; i < products.Count; i++)
@@ -117,16 +117,17 @@ namespace Homework08.Database
             products.Add(product);
         }
 
-        public void DeleteProduct(int id, List<Product> products)
+        public List<Product> DeleteProduct(int id, List<Product> products)
         {
+            var newList = new List<Product>();
             foreach(var p in products)
             {
-                if(p.Id == id)
+                if(p.Id != id)
                 {
-                    products.Remove(p);
+                    newList.Add(p);
                 }
             }
-           
+            return newList;
         }
 
     }
