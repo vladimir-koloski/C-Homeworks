@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Homework08.Linq.Enumerations\Homework08.Linq.Enumerations.csproj" />
+    <ProjectReference Include="..\Homework08.Linq.Models\Homework08.Linq.Models.csproj" />
+  </ItemGroup>
+
+</Project>
