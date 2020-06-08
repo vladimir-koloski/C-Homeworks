@@ -8,7 +8,7 @@ namespace Homework08.Database
 {
     public class Database
     {
-         protected List<Product> products = new List<Product>
+         public  List<Product> products = new List<Product>
 {
                 new Product("Keyboard", 100, Category.ItEquipment),
                 new Product("Mouse", 150, Category.ItEquipment),

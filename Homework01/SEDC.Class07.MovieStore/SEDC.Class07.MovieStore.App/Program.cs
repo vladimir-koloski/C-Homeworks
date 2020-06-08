@@ -31,9 +31,10 @@ namespace SEDC.Class07.MovieStore.App
             Console.WriteLine("---------------------------------");
             Menu.PrintUsers(userRepository.GetUsers());
 
-            Console.WriteLine(userRepository.CalcMembershipLeft(users[0]));
+            Console.WriteLine(userRepository.ExpirationMembership(users[1]));
+            Console.WriteLine(userRepository.ExpirationMembership(users[0]));
 
-            
+
 
 
             Employee employee = new Employee("Vladimir", "Koloski", 25, "vlatko_vin", "vlatko@vlatko.com", 075215803, Role.Employee, 162);

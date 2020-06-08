@@ -35,7 +35,7 @@ namespace SEDC.Class07.MovieStore.Data
             Users = new User[]
             {
                 new User("john", "malcovich", 35, "john@yahoo.com", "Malcovich123", 078888777, Role.User, TypeOfSubscription.Annually),
-                new User("Majk", "Tajson", 35, "majk@yahoo.com", "Tajson123", 077888333, Role.User, TypeOfSubscription.Annually)
+                new User("Majk", "Tajson", 35, "majk@yahoo.com", "Tajson123", 077888333, Role.User, TypeOfSubscription.Montly)
             };
 
             Employees = new Employee[]

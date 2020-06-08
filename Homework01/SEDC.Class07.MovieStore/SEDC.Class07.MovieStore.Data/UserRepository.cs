@@ -24,16 +24,39 @@ namespace SEDC.Class07.MovieStore.Data
             {
                 daysLeft = 30 - (DateTime.Now - user.DateOfRegistration).TotalDays;
             }
-            else if (user.TypeOfSubscription.ToString() == "Annualy")
+            else if (user.TypeOfSubscription.ToString() == "Annually")
             {
                 daysLeft = 365 - (DateTime.Now - user.DateOfRegistration).TotalDays;
             }
             return daysLeft;
         }
 
-        //public void ExpirationMembership()
-        //{
-        //    return $"You have {CalcMembershipLeft()} left till expiration od Membership";
-        //}
+        public string ExpirationMembership(User user)
+        {
+            return $"You have {CalcMembershipLeft(user)} days left till expiration od Membership";
+        }
+
+        public Movie[] ShowMovieList(Movie[] movies)
+        {
+            foreach(var movie in movies)
+            {
+                if(!movie.IsAvailable)
+                {
+                    movie.Title = movie.Title + "*";
+                }
+            }
+            return movies;
+        }
+
+        public void RentMovie(int id, Movie[] movies)
+        {
+            foreach (var movie in movies)
+            {
+                if(movie.Id == id)
+                {
+                    AddRentedMovie(movie);
+                }
+            }
+        }
     }
 }

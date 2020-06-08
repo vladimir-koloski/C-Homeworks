@@ -24,10 +24,10 @@ namespace SEDC.Quiz.Data.BaseData
         }
         public User Login()
         {
-            
+            var counter = 0;
             while (true)
             {
-                var counter = 0;
+                
                 Console.WriteLine("Enter userName: ");
                 var userName = Console.ReadLine();
                 Console.WriteLine("Enter password:");

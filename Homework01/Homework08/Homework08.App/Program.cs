@@ -15,9 +15,8 @@ namespace Homework08.App
 
 
             productRepository.PrintProducts(productRepository.GetAllProducts());
-
-            productRepository.GetProductByCategory(Category.LapTop, productRepository.GetAllProducts());
-            Console.WriteLine(productRepository.FindProductByName("Mouse", productRepository.GetAllProducts()));
+            
+            Console.WriteLine(productRepository.FindProductByName("Mou", productRepository.GetAllProducts()));
 
             List<Product> filterProductPriceRange = productRepository.GetProductsInPriceRange(100, 20000);
             foreach(var p in filterProductPriceRange)

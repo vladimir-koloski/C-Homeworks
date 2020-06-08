@@ -39,5 +39,16 @@ namespace SEDC.Class07.MovieStore.Data
             }
             return null;
         }
+
+        public void RentMovie(int movieId)
+        {
+            foreach(Movie movie in Movies)
+            {
+                if(movie.Id == movieId)
+                {
+                    movie.ChangeAvailability();
+                }
+            }
+        }
     }
 }

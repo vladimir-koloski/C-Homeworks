@@ -6,30 +6,31 @@ using System.Text;
 
 namespace Homework08.Database
 {
-    public class ProductRepository : Database
+    public class ProductRepository 
     {
-        public ProductRepository()
-            : base()
+        private List<Product> _products { get; set; }
+        public ProductRepository(Database database)
         {
+            _products = database.products;
         }
 
         public List<Product> GetAllProducts()
         {
-            return products;
+            return _products;
         }
 
-        public void PrintProducts(List<Product> products)
+        public void PrintProducts(List<Product> _products)
         {
-            foreach(var product in products)
+            foreach(var product in _products)
             {
                 Console.WriteLine(product.Info());
             }
         }
 
-        public List<Product> GetProductByCategory(Category category, List<Product> products)
+        public List<Product> GetProductByCategory(Category category, List<Product> _products)
         {
             var filteredProductsByCategory = new List<Product>();
-            foreach (Product product in products)
+            foreach (Product product in _products)
             {
                 if (product.Category == category)
                 {
@@ -42,29 +43,29 @@ namespace Homework08.Database
         public List<Product> GetProductsInPriceRange(int from, int to)
         {
             var filteredproducts = new List<Product>();
-            for(int i = 0; i < products.Count; i++)
+            for(int i = 0; i < _products.Count; i++)
             {
-                if(products[i].Price >= from && products[i].Price <= to)
+                if(_products[i].Price >= from && _products[i].Price <= to)
                 {
-                    filteredproducts.Add(products[i]);
+                    filteredproducts.Add(_products[i]);
                 }
             }
             return filteredproducts;
         }
 
-        public List<int> GetProductsId(List<Product> products)
+        public List<int> GetProductsId(List<Product> _products)
         {
             var productsId = new List<int>();
-            foreach (var p in products)
+            foreach (var p in _products)
             {
                 productsId.Add(p.Id);
             }
             return productsId;
         }
 
-        public  Product FindProductByName(string name, List<Product> products)
+        public  Product FindProductByName(string name, List<Product> _products)
         {
-            foreach (var p in products)
+            foreach (var p in _products)
             {
                 if (p.Name.ToLower().Contains(name.ToLower()))
                 {
@@ -74,9 +75,9 @@ namespace Homework08.Database
             return null;
         }
 
-        public int GetProductPrice(int id, List<Product> products)
+        public int GetProductPrice(int id, List<Product> _products)
         {
-            foreach (var p in products)
+            foreach (var p in _products)
             {
                 if (p.Id == id)
                 {
@@ -86,41 +87,41 @@ namespace Homework08.Database
             return 0;
         }
 
-        public Product GetCheapestProduct(List<Product> products)
+        public Product GetCheapestProduct()
         {
-            Product cheapestProduct = products[0];
-            for (int i = 0; i < products.Count; i++)
+            Product cheapestProduct = _products[0];
+            for (int i = 0; i < _products.Count; i++)
             {
-                if(products[i].Price < cheapestProduct.Price)
+                if(_products[i].Price < cheapestProduct.Price)
                 {
-                    cheapestProduct = products[i];
+                    cheapestProduct = _products[i];
                 }
             }
             return cheapestProduct;
         }
 
-        public Product GetExpensiveProduct(List<Product> products)
+        public Product GetExpensiveProduct(List<Product> _products)
         {
-            Product expensiveProduct = products[0];
-            for (int i = 0; i < products.Count; i++)
+            Product expensiveProduct = _products[0];
+            for (int i = 0; i < _products.Count; i++)
             {
-                if (products[i].Price > expensiveProduct.Price)
+                if (_products[i].Price > expensiveProduct.Price)
                 {
-                    expensiveProduct = products[i];
+                    expensiveProduct = _products[i];
                 }
             }
             return expensiveProduct;
         }
 
-        public void AddProduct(Product product, List<Product> products)
+        public void AddProduct(Product product, List<Product> _products)
         {
-            products.Add(product);
+            _products.Add(product);
         }
 
-        public List<Product> DeleteProduct(int id, List<Product> products)
+        public List<Product> DeleteProduct(int id, List<Product> _products)
         {
             var newList = new List<Product>();
-            foreach(var p in products)
+            foreach(var p in _products)
             {
                 if(p.Id != id)
                 {
