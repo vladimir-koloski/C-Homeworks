@@ -43,13 +43,19 @@ namespace SEDC.TimeTracking.App
                         string nameUser = Console.ReadLine();
                         Console.WriteLine("Enter your password: ");
                         string userPassword = Console.ReadLine();
-                        Console.WriteLine("Enter your First Name: ");
+                        Console.WriteLine("Enter your age: ");
                         int age = ValidationHelpers.TryParseNumber(Console.ReadLine(), 120);
 
                         var user = new User(firstName, lastName, nameUser, userPassword, age);
-                        _userService.Register(user);
+                        
+                        _currentUser = _userService.Register(user);
+                        if(_currentUser == null)
+                        {
+                            MessageHelpers.Message("Unsuccesful registration please try again", ConsoleColor.Red);
+                            Thread.Sleep(1500);
+                            continue;
+                        }                        
                         MessageHelpers.Message("You succesfully registered!", ConsoleColor.Green);
-                        _currentUser = user;
                         break;
                     case 3:
                         Environment.Exit(0);

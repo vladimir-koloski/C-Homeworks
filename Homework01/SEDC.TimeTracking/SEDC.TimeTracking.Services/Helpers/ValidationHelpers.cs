@@ -59,29 +59,29 @@ namespace SEDC.TimeTracking.Services.Helpers
             return null;
         }
 
-        public static string ValidateFirstNameAndLastName(string firstName, string lastName)
+        public static bool ValidateFirstNameAndLastName(string firstName, string lastName)
         {
             if(firstName.Length < 2 || lastName.Length < 2)
             {
-                return null;
+                return false;
             }
              
             foreach (var character in firstName.ToCharArray())
             {
                 if (char.IsNumber(character))
                 {
-                    return firstName;
+                    return false;
                 }
             }
             foreach (var character in lastName.ToCharArray())
             {
                 if (char.IsNumber(character))
                 {
-                    return lastName;
+                    return false;
                 }
             }
 
-            return null;
+            return true;
         }
 
         public static int AgeValidation(int age)

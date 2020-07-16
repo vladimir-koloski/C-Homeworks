@@ -20,7 +20,7 @@ namespace SEDC.TimeTracking.Services
         {
             var user = _dB.GetUserById(userId);
 
-            if (ValidationHelpers.ValidateFirstNameAndLastName(firstName, lastName) == null)
+            if (!ValidationHelpers.ValidateFirstNameAndLastName(firstName, lastName))
             {
                 MessageHelpers.Message("The first and last name should not be shorter than 2 characters and must not contain numbers!", ConsoleColor.Red);
                 return;
@@ -86,7 +86,7 @@ namespace SEDC.TimeTracking.Services
 
         public T Register(T user)
         {
-            if(ValidationHelpers.ValidateFirstNameAndLastName(user.FirstName, user.LastName) == null
+            if(!ValidationHelpers.ValidateFirstNameAndLastName(user.FirstName, user.LastName)
                 || ValidationHelpers.AgeValidation(user.Age) == -1
                 || ValidationHelpers.ValidateUserName(user.Username) == null
                 || ValidationHelpers.ValidatePassword(user.Password) == null)
